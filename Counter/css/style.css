@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer layout, components, cores;
+
+@layer cores {
+  :root {
+    --color-background: #ced4da;
+    --color-container: #6c757d;
+    --color-text: #212529;
+  }
+}
+@layer layout {
+  body {
+    background-color: var(--color-background);
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    background-color: var(--color-container);
+    min-width: 50dvw;
+    min-height: 70dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 4px var(--color-text);
+    border-radius: 10px;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer components {
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .counter {
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .buttons {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & .button {
+      background-color: #caf0f8;
+      color: var(--color-text);
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+.button {
+  padding: 1rem 3.7rem;
+}
+#reset {
+  padding-left: 3.7rem;
+  padding-right: 3.7rem;
+}
